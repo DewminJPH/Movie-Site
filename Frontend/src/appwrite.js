@@ -20,7 +20,7 @@ export const updateSearchCount = async (searchTerm, movie) => {
     if(result.documents.length > 0){
       const doc = result.documents[0]
 
-      await database.updateDocumnet(DATABASE_ID,TABLE_ID,doc.$id,{
+      await database.updateDocument(DATABASE_ID,TABLE_ID,doc.$id,{
         count: doc.count + 1
       })
       // 3. But if there is no term, then create a new document with the search term and count as 1
